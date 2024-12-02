@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static',filename='style.css') }}">
+    <title>注文管理システム</title>   
+    <script type="text/javascript" src="script.js"></script>
+
+</head>
+
+<body>
+    <header>
+        <h1>小粥の注文プラットフォーム</h1>
+    </header>
+
+    <div class="container">
+        <!-- Order Table -->
+        
+        <div class="order-table">
+            <h2>注文テーブル</h2>
+
+            {% if books == [] %}
+            <p>まだ注文はありません</p>
+
+            {% else %}
+            <table>
+                <tr>
+                    <th>注文者</th>
+                    <th>期限</th>
+                    <th>注文内容</th>
+                </tr>
+                {% for book in books %}
+                <tr>
+
+                    <td>{{book.orderer}}</td>
+                    <td>{{book.deadline}}</td>
+                    <td>{{book.orderContent}}</td>
+                </tr>
+                {% endfor %}
+                <!-- Additional rows will be added here dynamically -->
+            </table>
+            {% endif %}
+        </div>
+
+        <!-- New Order Form -->
+        <form method="post" action="{{ url_for('register') }}">
+        <div class="new-order-form">
+            <h2>新規発注</h2>
+            
+            <label for="orderer">注文者</label>
+            <input type="text" id="orderer" name="orderer">
+
+            <label for="deadline">期限</label>
+            <input type="date" id="deadline" name="deadline">
+
+            <label for="orderContent">注文内容</label>
+            <input type="text" id="orderContent" name="orderContent">
+
+            <button type="submit" onclick="addOrder()">追加</button>
+        
+        </div>
+    </div>
+
+</body>
+
+</html>

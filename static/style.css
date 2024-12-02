@@ -1,0 +1,74 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    margin-top: 20px;
+}
+
+header{
+    margin-top: 50px;
+    font-size: 14px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 20px,10px;
+}
+
+.order-table,
+.new-order-form {
+    width: 40%;
+}
+
+.order-table{
+    margin-top: 20px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+th,
+td {
+    padding: 8px;
+    border: 1px solid #ddd;
+    text-align: center;
+}
+
+.new-order-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+.new-order-form label,
+.new-order-form input {
+    width: 80%;
+    margin: 10px 0;
+}
+
+.new-order-form input[type="text"],
+.new-order-form input[type="date"] {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.order-table, .new-order-form {
+    width: 400px;
+    height: 100px;
+}
+
+.new-order-form button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #aefeff;
+    border: none;
+    cursor: pointer;
+}
